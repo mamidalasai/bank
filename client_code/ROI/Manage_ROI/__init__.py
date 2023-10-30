@@ -64,6 +64,10 @@ class Manage_ROI(Manage_ROITemplate):
     """This method is called when the button is clicked"""
     open_form('ROI.Form1')
 
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    
+
 
 
  
