@@ -169,11 +169,4 @@ components:
     icon: ''}
   name: output_tb
   layout_properties: {grid_position: 'LFPETN,DAQNQC'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: true, underline: false,
-    icon: ''}
-  name: output_tb1
-  layout_properties: {grid_position: 'EQVAVA,INXUDT'}
 is_package: true
