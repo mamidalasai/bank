@@ -122,7 +122,7 @@ components:
 - type: FlowPanel
   properties: {}
   name: flow_panel_6
-  layout_properties: {grid_position: 'NEPHNH,TRIIVH'}
+  layout_properties: {grid_position: 'NEPHNH,GCXUHV'}
   components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
