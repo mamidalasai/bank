@@ -1,0 +1,113 @@
+container: {type: DataRowPanel}
+components:
+- type: DataRowPanel
+  properties: {}
+  name: data_row_panel_1
+  layout_properties: {column: null}
+  components:
+  - type: TextBox
+    properties: {}
+    name: tb_i_investment
+    layout_properties: {column: TRNTCV}
+    data_bindings:
+    - {property: text, code: 'self.item[''initial_investment'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: select
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [6Months, 1Year, 2Years]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_tenure
+    layout_properties: {column: LQIZTM}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''tenure'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: select
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [Silver, Gold, Platinum]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down_2
+    layout_properties: {column: HGHBXI}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''membership_type'']', writeback: true}
+  - type: TextBox
+    properties: {}
+    name: tb_i_rate
+    layout_properties: {column: VDMADF}
+    data_bindings:
+    - {property: text, code: 'self.item[''interest_rate'']', writeback: true}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {column: IQNFBC}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#138fb9', visible: true, text: '', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:floppy-o'}
+      name: button_1
+      layout_properties: {}
+      event_bindings: {click: button_1_click}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#138fb9', visible: true, text: '', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:trash'}
+      name: button_2
+      layout_properties: {}
+      event_bindings: {click: button_2_click}
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: TRNTCV}
+  data_bindings:
+  - {property: text, code: 'self.item[''initial_investment'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: LQIZTM}
+  data_bindings:
+  - {property: text, code: 'self.item[''tenure'']'}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: HGHBXI}
+  data_bindings:
+  - {property: text, code: 'self.item[''membership_type'']'}
+- type: Label
+  properties: {}
+  name: label_4
+  layout_properties: {column: VDMADF}
+  data_bindings:
+  - {property: text, code: 'self.item[''interest_rate'']'}
+is_package: true

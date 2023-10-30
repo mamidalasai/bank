@@ -1,0 +1,339 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: HSHHAR}
+  data_bindings:
+  - {property: text, code: 'self.item[''product_id'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: GMEVDY}
+  data_bindings:
+  - {property: text, code: 'self.item[''product_name'']'}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: QGZVTZ}
+  data_bindings:
+  - {property: text, code: 'self.item[''membership'']'}
+- type: Label
+  properties: {}
+  name: label_9
+  layout_properties: {column: APFFTW}
+  data_bindings:
+  - {property: text, code: 'self.item[''min'']'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: label_11
+  layout_properties: {column: KSCVVF}
+  data_bindings:
+  - {property: text, code: 'self.item[''ext_allowed'']'}
+- type: Label
+  properties: {}
+  name: label_13
+  layout_properties: {column: FTSTEF}
+  data_bindings:
+  - {property: text, code: 'self.item[''foreclosure'']'}
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_1
+  layout_properties: {column: null}
+  components:
+  - type: DataRowPanel
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      auto_display_data: true, visible: true, item: null, font_size: null, font: '',
+      spacing_above: none, spacing_below: none, italic: false, background: '', bold: false,
+      underline: false}
+    name: data_row_panel_read_view
+    layout_properties: {column: null}
+    components:
+    - type: FlowPanel
+      properties: {}
+      name: flow_panel_3
+      layout_properties: {column: null}
+      components: []
+- type: DataRowPanel
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: false,
+    visible: true, item: null, font_size: null, font: '', spacing_above: none, spacing_below: none,
+    italic: false, background: '', bold: false, underline: false}
+  name: data_row_panel_write_view
+  layout_properties: {column: null}
+  components:
+  - type: TextBox
+    properties: {}
+    name: tb_productid
+    layout_properties: {column: HSHHAR}
+    event_bindings: {pressed_enter: text_box_1_pressed_enter}
+    data_bindings:
+    - {property: text, code: 'self.item[''product_id'']', writeback: true}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_2
+    layout_properties: {column: null}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#138fb9', visible: true, text: save, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:floppy-o'}
+      name: button_3
+      layout_properties: {}
+      event_bindings: {click: button_3_click}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#138fb9', visible: true, text: delete, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:trash'}
+      name: button_2
+      layout_properties: {}
+      event_bindings: {click: button_2_click}
+  - type: TextBox
+    properties: {}
+    name: tb_productname
+    layout_properties: {column: GMEVDY}
+    data_bindings:
+    - {property: text, code: 'self.item[''product_name'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [Silver, Gold, Platinum]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_membership
+    layout_properties: {column: QGZVTZ}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''membership'']', writeback: true}
+    event_bindings: {change: dd_membership_change}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [Fixed Type, EMI, ROI]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_interesttype
+    layout_properties: {column: NCXKIT}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''interest'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [5000-5999, 4000-4999, 3000-3999, '2000']
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_min
+    layout_properties: {column: APFFTW}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''min'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: ['10000 ', 9000-9999, 8000-8999, 7000-9999]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_max
+    layout_properties: {column: WTMTYL}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''max'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [6 Months, 1 Year, 2 Years]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_tenure
+    layout_properties: {column: GUDFHC}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''tenure'']', writeback: true}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tb_process
+    layout_properties: {column: YLLJQD}
+    data_bindings:
+    - {property: text, code: 'self.item[''process'']', writeback: true}
+  - type: TextBox
+    properties: {}
+    name: tb_extension
+    layout_properties: {column: BYFQEO}
+    event_bindings: {pressed_enter: text_box_1_pressed_enter}
+    data_bindings:
+    - {property: text, code: 'self.item[''extension'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: ['Yes', 'No']
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_extensions
+    layout_properties: {column: KSCVVF}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''ext_allowed'']', writeback: true}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: ['Yes', 'No']
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: dd_part
+    layout_properties: {column: JCHUFH}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''part'']', writeback: true}
+  - type: TextBox
+    properties: {}
+    name: tb_foreclosure
+    layout_properties: {column: FTSTEF}
+    data_bindings:
+    - {property: text, code: 'self.item[''foreclosure'']', writeback: true}
+  - type: TextBox
+    properties: {}
+    name: tb_defaulter
+    layout_properties: {column: XNFTNM}
+    data_bindings:
+    - {property: text, code: 'self.item[''defaulter'']', writeback: true}
+- type: Label
+  properties: {}
+  name: label_7
+  layout_properties: {column: NCXKIT}
+  data_bindings:
+  - {property: text, code: 'self.item[''interest'']'}
+- type: Label
+  properties: {}
+  name: label_8
+  layout_properties: {column: WTMTYL}
+  data_bindings:
+  - {property: text, code: 'self.item[''max'']'}
+- type: Label
+  properties: {}
+  name: label_4
+  layout_properties: {column: YLLJQD}
+  data_bindings:
+  - {property: text, code: 'self.item[''process'']'}
+- type: Label
+  properties: {}
+  name: label_10
+  layout_properties: {column: GUDFHC}
+  data_bindings:
+  - {property: text, code: 'self.item[''tenure'']'}
+- type: Label
+  properties: {}
+  name: label_5
+  layout_properties: {column: BYFQEO}
+  data_bindings:
+  - {property: text, code: 'self.item[''extension'']'}
+- type: Label
+  properties: {}
+  name: label_6
+  layout_properties: {column: XNFTNM}
+  data_bindings:
+  - {property: text, code: 'self.item[''defaulter'']'}
+- type: Label
+  properties: {}
+  name: label_12
+  layout_properties: {column: JCHUFH}
+  data_bindings:
+  - {property: text, code: 'self.item[''part'']'}
+is_package: true

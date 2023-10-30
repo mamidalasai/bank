@@ -1,0 +1,76 @@
+container:
+  type: DataRowPanel
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true,
+    visible: true, font_size: null, font: '', spacing_above: none, spacing_below: none,
+    italic: false, background: '', bold: false, underline: false}
+components:
+- type: DataRowPanel
+  properties: {}
+  name: data_row_panel_1
+  layout_properties: {column: null}
+  components:
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {column: FBJCOO}
+    components:
+    - type: TextBox
+      properties: {}
+      name: tb_tenure
+      layout_properties: {}
+      data_bindings:
+      - {property: text, code: 'self.item[''tenure'']', writeback: true}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#138fb9', visible: true, text: '', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:floppy-o'}
+      name: button_1
+      layout_properties: {}
+      event_bindings: {click: button_1_click}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#138fb9', visible: true, text: '', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:trash'}
+      name: button_2
+      layout_properties: {}
+      event_bindings: {click: button_2_click}
+    data_bindings:
+    - {property: tag, code: 'self.item[''tenure'']'}
+  - type: TextBox
+    properties: {}
+    name: tb_membership
+    layout_properties: {column: LSCKHU}
+    data_bindings:
+    - {property: text, code: 'self.item[''membership'']', writeback: true}
+    event_bindings: {pressed_enter: tb_membership_pressed_enter}
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: LSCKHU}
+  data_bindings:
+  - {property: text, code: 'self.item[''membership'']'}
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_2
+  layout_properties: {column: FBJCOO}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_2
+    layout_properties: {column: FBJCOO}
+    data_bindings:
+    - {property: text, code: 'self.item[''tenure'']'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {width: 103}
+is_package: true

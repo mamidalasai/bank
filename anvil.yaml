@@ -1,0 +1,183 @@
+correct_dependency_ids: {}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: false, enable_automatically: true, use_email: true,
+    confirm_email: true, use_google: true}
+  server_config: {user_table: users}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: ROI.Manage_ROI}
+package_name: Bank
+allow_embedding: false
+name: Clone of complete_kotak
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {title: BankUserpage, logo_img: 'asset:kotackpng.png'}
+startup_form: null
+db_schema:
+  users:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: mail_id
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: Date_of_signup
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    - name: pincode
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: mobile_no
+      admin_ui: {width: 200, order: 1.5}
+      type: string
+    - name: user_id
+      admin_ui: {width: 200, order: -1}
+      type: string
+    - name: passward
+      admin_ui: {width: 200, order: 1.75}
+      type: string
+    - name: email
+      admin_ui: {order: 7, width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {order: 8, width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {order: 9, width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {order: 10, width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {order: 11, width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {order: 12, width: 200}
+      type: bool
+    title: Users
+  borrower:
+    client: none
+    server: full
+    columns:
+    - name: user_id
+      admin_ui: {width: 200, order: 0}
+      type: link_single
+      target: users
+    - name: Customer_id
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: User_Type
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: passcode
+      admin_ui: {width: 200, order: 3}
+      type: link_single
+      target: users
+    title: borrower
+  lendor:
+    client: none
+    server: full
+    columns: []
+    title: lendor
+  membership:
+    client: none
+    server: full
+    columns:
+    - name: membershiptype
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: tenure
+      admin_ui: {width: 200, order: 1}
+      type: string
+    title: membership
+  loan:
+    client: none
+    server: full
+    columns:
+    - name: loan_id
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: loan_amount
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: loan_availed_date
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: tenure
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: intrest
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: processing_fee
+      admin_ui: {width: 200, order: 5}
+      type: string
+    - name: loan_repayment_amount
+      admin_ui: {width: 200, order: 6}
+      type: string
+    - name: loan_due_amount
+      admin_ui: {width: 200, order: 7}
+      type: string
+    - name: select
+      admin_ui: {width: 200, order: 8}
+      type: string
+    - name: loan_extension
+      admin_ui: {width: 200, order: -1}
+      type: string
+    title: loan
+  products:
+    client: full
+    server: full
+    columns:
+    - name: product_id
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: product_name
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: membership
+      admin_ui: {order: 2, width: 200}
+      type: string
+    - name: process
+      admin_ui: {order: 3, width: 200}
+      type: string
+    - name: extension
+      admin_ui: {order: 4, width: 200}
+      type: string
+    - name: defaulter
+      admin_ui: {order: 5, width: 200}
+      type: string
+    - name: interest
+      admin_ui: {order: 6, width: 200}
+      type: string
+    - name: max
+      admin_ui: {order: 7, width: 200}
+      type: string
+    - name: min
+      admin_ui: {order: 8, width: 200}
+      type: string
+    - name: tenure
+      admin_ui: {width: 200, order: 9}
+      type: string
+    - name: extensionsallowed
+      admin_ui: {order: 10, width: 200}
+      type: string
+    - name: part
+      admin_ui: {order: 11, width: 200}
+      type: string
+    - name: foreclosure
+      admin_ui: {width: 200, order: 12}
+      type: string
+    title: product
